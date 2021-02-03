@@ -20,7 +20,7 @@ function App() {
           <div className="w-100" width={{maxWidth:"400px"}}>
             <AuthProvider>
               <Switch>
-                <PrivateRoute exact path="/" component={Search} />
+                <Route exact path="/" component={Search} />
                 <PrivateRoute path="/update-profile" component={UpdateProfile} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
 
