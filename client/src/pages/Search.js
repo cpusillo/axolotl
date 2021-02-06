@@ -1,20 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState, Component } from 'react'
 import { Container, Card, Button, InputGroup, FormControl } from 'react-bootstrap'
 import { FaSearchLocation } from 'react-icons/fa'
 import API from "../utils/API"
 
-export default function Search() {
-
+class Search extends React.Component {
+    state={
+        food: [],
+        events: []        
+    }
+    componentDidMount() {
+        this.loadRestaurants();
+        this.loadEvents()
+    };
+    
     // ZOMATO API CALL
-    const [food, setFood] = useState([])
-    function loadRestaurants() {
+    loadRestaurants = () => {
         API.getRestaurants()
-          .then(res => 
-            setFood(res.data)
+          .then(res => {
+              this.setState({
+                  food: res.data
+              })
+              console.log(this.state.food);
+          }
+            // setFood(res.data)
           )};
-      loadRestaurants();
-        console.log(food);
+    //   loadRestaurants();
+        
 
+     loadEvents = () => {
+         API.getEvents()
+         .then (res=> {
+             this.setState({
+                 events: res.data
+             }) 
+             console.log(this.state.events)
+         }
+            // setEvents(res.event)
+        )}   
+        // loadEvents();
+        
+        
+render () {
     return (
         <>
             <Container>
@@ -43,4 +69,6 @@ export default function Search() {
 
         </>
     )
-}
+}}
+
+export default Search;
