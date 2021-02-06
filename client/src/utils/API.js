@@ -1,4 +1,5 @@
 import axios from "axios"
+// eslint-disable-next-line
 
 export default {
     // ZOMATO API CALL
@@ -7,4 +8,10 @@ export default {
                 headers: {"user-key": process.env.REACT_APP_ZOMATO_API_KEY}
               });
 
-}}
+            },
+
+ // EVENTFUL API Call  
+ getEvents(){
+  return axios.get(`https://api.seatgeek.com/2/performers?q=gaga&client_id=${process.env.REACT_APP_SEATGEEK_API_KEY}`)}
+
+ }
