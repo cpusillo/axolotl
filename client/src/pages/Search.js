@@ -1,16 +1,17 @@
-import React, { useState, Component } from 'react'
+import React, { Component } from 'react'
 import { Container, Card, Button, InputGroup, FormControl } from 'react-bootstrap'
 import { FaSearchLocation } from 'react-icons/fa'
 import API from "../utils/API"
+import SearchResults from "../components/SearchResults"
 
-class Search extends React.Component {
+class Search extends Component {
     state={
         food: [],
         events: []        
     }
     componentDidMount() {
         this.loadRestaurants();
-        this.loadEvents()
+        // this.loadEvents()
     };
     
     // ZOMATO API CALL
@@ -20,24 +21,24 @@ class Search extends React.Component {
               this.setState({
                   food: res.data
               })
-              console.log(this.state.food);
+              //console.log(this.state.food);
           }
             // setFood(res.data)
           )};
     //   loadRestaurants();
         
 
-     loadEvents = () => {
-         API.getEvents()
-         .then (res=> {
-             this.setState({
-                 events: res.data
-             }) 
-             console.log(this.state.events)
-         }
-            // setEvents(res.event)
-        )}   
-        // loadEvents();
+    //  loadEvents = () => {
+    //      API.getEvents()
+    //      .then (res=> {
+    //          this.setState({
+    //              events: res.data
+    //          }) 
+    //          console.log(this.state.events)
+    //      }
+    //         // setEvents(res.event)
+    //     )}   
+    //     // loadEvents();
         
         
 render () {
@@ -63,7 +64,9 @@ render () {
             </Card>
 
             <Card className="mt-2 p-3">
-                <p>Search results populate here</p>
+                <SearchResults 
+                results={this.state.food} 
+                />
             </Card>
             </Container>
 
@@ -71,4 +74,4 @@ render () {
     )
 }}
 
-export default Search;
+export default Search

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
 
   return (  
-
+  
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <Link className="navbar-brand" href="#">AXOLOTL</Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
