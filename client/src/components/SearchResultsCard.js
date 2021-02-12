@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
 import { IoFastFood, IoLocationSharp, IoTimeSharp, IoCalendarSharp } from "react-icons/io5";
 import {GiKnifeFork} from "react-icons/gi";
+
 class SearchResultsCard extends Component {
 
 

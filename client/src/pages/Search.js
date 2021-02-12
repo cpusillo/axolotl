@@ -3,6 +3,7 @@ import { Container, Card, Button, InputGroup, FormControl } from 'react-bootstra
 import { FaSearchLocation } from 'react-icons/fa'
 import API from "../utils/API"
 import SearchResults from "../components/SearchResults"
+import EventsResults from "../components/EventsResults"
 
 class Search extends Component {
     state={
@@ -10,35 +11,35 @@ class Search extends Component {
         events: []        
     }
     componentDidMount() {
-        this.loadRestaurants();
-        // this.loadEvents()
+        // this.loadRestaurants();
+        this.loadEvents()
     };
     
-    // ZOMATO API CALL
+    ZOMATO API CALL
     loadRestaurants = () => {
         API.getRestaurants()
           .then(res => {
               this.setState({
                   food: res.data
               })
-              //console.log(this.state.food);
+              console.log(this.state.food);
           }
-            // setFood(res.data)
+            setFood(res.data)
           )};
-    //   loadRestaurants();
+      loadRestaurants();
         
 
-    //  loadEvents = () => {
-    //      API.getEvents()
-    //      .then (res=> {
-    //          this.setState({
-    //              events: res.data
-    //          }) 
-    //          console.log(this.state.events)
-    //      }
-    //         // setEvents(res.event)
-    //     )}   
-    //     // loadEvents();
+     loadEvents = () => {
+         API.getEvents()
+         .then (res=> {
+             this.setState({
+                 events: res.data
+             }) 
+            //  console.log(this.state.events)
+         }
+            // setEvents(res.event)
+        )}   
+        // loadEvents();
         
         
 render () {
@@ -64,9 +65,11 @@ render () {
             </Card>
 
             <Card className="mt-2 p-3">
-                <SearchResults 
+                {/* <SearchResults 
                 results={this.state.food} 
-                />
+                /> */}
+                <EventsResults results = {this.state.events} />
+                
             </Card>
             </Container>
 
