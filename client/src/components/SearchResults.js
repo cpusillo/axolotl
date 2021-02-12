@@ -3,18 +3,8 @@ import SearchResultsCard from "./SearchResultsCard"
 
 class SearchResults extends Component {
 
-    // important stuff from the
-    //r.restaurant.name
-    //r.restaurant.cuisines
-    // r.restaurant.location.address (gives the street)
-    // r.restaurant.location.locality
-    // r.restaurant.location.city
-    // r.restaurant.menu_url
-    // r.restaurant.events_url
-
-
     render(){
-        console.log(this.props.results.restaurants)
+        //console.log(this.props.results.restaurants)
         return (
             this.props.results.restaurants.map((r) => (
                 <SearchResultsCard
@@ -27,7 +17,7 @@ class SearchResults extends Component {
                     city={r.restaurant.location.city}
                     menu_url={r.restaurant.menu_url}
                     events_url={r.restaurant.events_url}
-                    thumb={r.restaurant.thumb}
+                    thumb={r.restaurant.thumb ? r.restaurant.thum : "https://lh3.googleusercontent.com/proxy/xROwqj4aX26Ya2WsjvQm6ZeG4dIOUvm1stlzQAu9l5Op4YSYWnnM1Hl4gxgKe-oxRBBB0y6oNiECD1lrszVRS1Nf1lBOHOxUhAE1jcD3WJrTe4JFJ0k7F-mS2Qywe_TQ4A"}
                     timings={r.restaurant.timings}
                 />
             ))
