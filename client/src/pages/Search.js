@@ -3,8 +3,7 @@ import { Container, Card, Button, InputGroup, FormControl, ProgressBar } from 'r
 import { FaSearchLocation, FaCheckSquare } from 'react-icons/fa'
 import API from "../utils/API"
 import SearchResults from "../components/SearchResults"
-import { geolocated } from "react-geolocated";
-import "./Styles.css"
+import EventsResults from "../components/EventsResults"
 
 class Search extends Component {
     state = { 
@@ -113,6 +112,7 @@ render () {
             ) : (
                 <p className="green"><FaCheckSquare/>  Ready to search!</p>
             )}
+            <EventsResults results = {this.state.events} />
             </Card>
             </Container>
 

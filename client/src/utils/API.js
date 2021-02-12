@@ -1,6 +1,5 @@
 import axios from "axios"
 // eslint-disable-next-line
-
 export default {
     // ZOMATO API CALL
     getRestaurants(lat, lon){
@@ -11,7 +10,7 @@ export default {
             },
                 // SeatGeek API Call  
     getEvents(){
-      return axios.get(`https://api.seatgeek.com/2/performers?q=gaga&client_id=${process.env.REACT_APP_SEATGEEK_API_KEY}`)
+      return axios.get(`https://api.seatgeek.com/2/performers?&client_id=${process.env.REACT_APP_SEATGEEK_API_KEY}`)
     }
       }
 
