@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Card, Form, Button, Alert } from 'react-bootstrap'
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from 'react-router-dom'
-
+import './login.css';
 export default function Login(){
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -29,7 +29,7 @@ async function handleSubmit(e){
     return (
         <>
     <Card>
-        <Card.Body>
+        <Card.Body id='login' >
             <h2 className="text-center mb-3">Log In</h2>
             {/* If there is an error with handleSubmit show it as a red alert */}
             {error && <Alert variant="danger">{error}</Alert>}
