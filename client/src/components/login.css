@@ -1,0 +1,54 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+body{
+  background-color: #d7e611;
+  margin-left: 20px;
+}
+
+#login{
+  width: 400px;
+  margin: 20px auto ;
+  font-family: Lato;
+  font-size: 0.8em;
+  font-weight: bolder;
+}
+  #card {    
+   
+    margin-top: 100px;
+    font-family: Lato;
+    font-size: 1.4em;    
+    background-color: transparent;
+    border: none;
+    border-top:   5px solid #4EA5D9;    
+    border-bottom: 5px solid #4EA5D9;
+    outline: none;
+    color: #52c8e6;
+    padding-left: 10px; 
+    width: 500px;
+    
+    
+      
+    
+    
+  }
+  #sign{
+    font-weight: bolder;
+    color: yellow;
+  }
+  
+  label{
+    display: block;
+    position: relative;
+    left: 10px;
+    /* top: -0px; */
+    font-size: 1.8em;
+    cursor: text;
+    color: cornsilk;    
+    /* transition: all .2s;     */
+  }
+#head{
+  color: rgb(15, 30, 248);
+  font-weight: bolder;
+  border: 0px;
+
+}
