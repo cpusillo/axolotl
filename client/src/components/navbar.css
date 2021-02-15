@@ -1,0 +1,15 @@
+img {
+    opacity: 0.8;
+width: 90px;
+margin-right: 10px;
+position: relative;
+
+}
+
+#nav{
+font-weight: bolder;
+
+}
+ul {
+    background-color: #dddddd;
+  }
