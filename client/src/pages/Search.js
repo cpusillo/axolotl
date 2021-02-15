@@ -22,8 +22,9 @@ class Search extends Component {
     // ==== OnClick Handlers ==== //
 
     handleButtonClick = () => {
-        console.log(this.state.latitude)
-        this.loadRestaurants(this.state.latitude, this.state.longitude);
+        // console.log(this.state.latitude)
+        // this.loadRestaurants(this.state.latitude, this.state.longitude);
+        this.loadEvents();
     }
     // ==== API CALLS ==== //
     
@@ -34,17 +35,12 @@ class Search extends Component {
               //console.log(this.state.food)
         }).catch(err => console.log(err)) };
 
-    //  loadEvents = () => {
-    //      API.getEvents()
-    //      .then (res=> {
-    //          this.setState({
-    //              events: res.data
-    //          }) 
-    //          console.log(this.state.events)
-    //      }
-    //         // setEvents(res.event)
-    //     )}   
-    //     // loadEvents();
+     loadEvents = () => {
+         API.getEvents()
+         .then (res=> {this.setState({events: res.data}) 
+                // console.log(this.state.events)
+         }).catch(err =>console.log(err))
+};
 
     // ==== GEOLOCATION METHODS ==== //
     
@@ -113,7 +109,16 @@ render () {
             ) : (
                 <p className="green"><FaCheckSquare/>  Ready to search!</p>
             )}
-            <EventsResults results = {this.state.events} />
+            {this.state.events.length != 0 ? (
+                 <EventsResults 
+                     results={this.state.events} 
+                 /> 
+            ) : (
+                <div>
+                <p>Nothing to see here, try looking for something to do!</p>
+
+            </div>
+            )}
             </Card>
             </Container>
 
