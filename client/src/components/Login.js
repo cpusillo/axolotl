@@ -28,9 +28,9 @@ async function handleSubmit(e){
 
     return (
         <>
-    <Card>
+    <Card id="card">
         <Card.Body id='login' >
-            <h2 className="text-center mb-3">Log In</h2>
+            <h2 id="head" className="text-center mb-3">Log In</h2>
             {/* If there is an error with handleSubmit show it as a red alert */}
             {error && <Alert variant="danger">{error}</Alert>}
             <Form onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ async function handleSubmit(e){
             </div>
         </Card.Body>
     </Card>
-    <div className="w-100 text-center mt-2">
+    <div id="sign" className="w-100 text-center mt-2">
         Don't have an account? What are you waiting for? <Link to="/signup" >Sign up!</Link>
     </div>
         </>

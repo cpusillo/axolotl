@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
 body{
-  background-color: #d7e611;
+  background-color: #32332a;
   margin-left: 20px;
 }
 
-#login{
+#sign-up{
   width: 400px;
   margin: 20px auto ;
   font-family: Lato;
