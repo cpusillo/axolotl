@@ -31,12 +31,13 @@ class EventsResults extends Component{
                 _id={e.id}
                 key={e.id}
                 title={e.title}
-                type={e.type}
+                image={e.performers[0].image}
                 venue={e.venue.name}
+                type={e.type}
                 address={e.venue.address}
                 extended_address={e.venue.extended_address}
                 date={e.datetime_local}
-                image={e.performers[0].image}
+                
                 url={e.url}
                 
                 >Hello</EventsResultsCard>     
