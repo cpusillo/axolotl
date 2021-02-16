@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Card, Form, Button, Alert } from 'react-bootstrap'
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from 'react-router-dom'
-
+import "./signup.css";
 export default function Signup(){
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -37,11 +37,14 @@ async function handleSubmit(e){
 
     return (
         <>
-    <Card>
-        <Card.Body>
-            <h2 className="text-center mb-3">Sign Up</h2>
+    
+    <Card id="card">
+        <Card.Body id="sign-up">
+            <h2 id="head" className="text-center mb-3">Sign Up</h2>
+
             {/* If there is an error with handleSubmit show it as a red alert */}
             {error && <Alert variant="danger">{error}</Alert>}
+            
             <Form onSubmit={handleSubmit}>
                 <Form.Group id="email">
                     <Form.Label>Email</Form.Label>
@@ -59,11 +62,14 @@ async function handleSubmit(e){
                 </Form.Group>
                 <Button disabled={loading} className="w-100" type="submit" variant="success">Sign Up!</Button>
             </Form>
+            
         </Card.Body>
     </Card>
-    <div className="w-100 text-center mt-2">
+    <div id="sign" className="w-100 text-center mt-2">
         Already have an account? <Link to="/login">Login</Link>
+        
     </div>
+    
         </>
     )
 }

@@ -4,6 +4,7 @@ import { FaSearchLocation, FaCheckSquare } from 'react-icons/fa'
 import API from "../utils/API"
 import SearchResults from "../components/SearchResults"
 import EventsResults from "../components/EventsResults"
+import './search.css';
 
 class Search extends Component {
     state = { 
@@ -67,14 +68,14 @@ class Search extends Component {
 render () {
     return (
         <>
-            <Container>
+            <Container id="main-container" class="glassy-text" >
             <Card>
                 <Card.Header>
                     <h2 className="w-100 text-center mt-2">Search for local food & entertainment</h2>
                 </Card.Header>
                 <Card.Body>
                 <InputGroup className="mb-3">
-                <FormControl
+                <FormControl className="wrapper"
                 placeholder="Tacos"
                 />
                 <InputGroup.Append>
