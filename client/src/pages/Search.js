@@ -109,7 +109,7 @@ render () {
             ) : (
                 <p className="green"><FaCheckSquare/>  Ready to search!</p>
             )}
-            {this.state.events.length != 0 ? (
+            {this.state.events.length !=0 ? (
                  <EventsResults 
                      results={this.state.events} 
                  /> 
@@ -119,6 +119,7 @@ render () {
 
             </div>
             )}
+            
             </Card>
             </Container>
 
