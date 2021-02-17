@@ -16,13 +16,13 @@ class EventsResultsCard extends Component {
             <Card key={this.props.key}>
                 <Card.Header>
                     <Row>
-                    <h5>{this.props.title}</h5>
+                    <h4><span style={{fontWeight: "bold"}}>{this.props.title}</span></h4>
                     </Row>    
 
                     <Row>    
                         <Col>
                             
-                            <img src={this.props.image} alt={this.props.title} class="img-rest" align="center"/>
+                            <img src={this.props.image}  alt={this.props.title} class="img-rest" align="center"/>
                         </Col>
                         <Col>
                             <Button ><IoSaveSharp /></Button>
@@ -32,13 +32,13 @@ class EventsResultsCard extends Component {
                 </Card.Header>
                 <Row>
                     <Col>
-                    <p><BsFillLightningFill/> Event Type: {this.props.type}</p>
-                    <p><BsImage/> Venue Name: {this.props.venue}</p>
-                    <p><IoLocationSharp/> Venue Address: {this.props.address}, {this.props.extended_address}</p>
+                    <p><BsFillLightningFill/> <span style={{fontWeight: "bold"}}>Event Type:</span> {this.props.type}</p>
+                    <p><BsImage/> <span style={{fontWeight: "bold"}}>Venue Name: </span> {this.props.venue}</p>
+                    <p><IoLocationSharp/> <span style={{fontWeight: "bold"}}>Venue Address: </span> {this.props.address}, {this.props.extended_address}</p>
                     </Col>
                     <Col>
-                    <p><IoTimeSharp/>: {this.props.date}</p>
-                    <a href={this.props.url} className="event-links" target="_blank"><IoTicketSharp/>Tickets/More Info</a>
+                    <p><IoTimeSharp/><span style={{fontWeight: "bold"}}>Date/Time: </span> {moment(this.props.date).format("LLLL")}</p>
+                    <a href={this.props.url} className="event-links" target="_blank"><IoTicketSharp/><span style={{fontWeight: "bold"}}>Tickets/More Info </span></a>
                     </Col>
                 </Row>
             </Card>
