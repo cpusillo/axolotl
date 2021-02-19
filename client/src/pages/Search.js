@@ -12,7 +12,8 @@ class Search extends Component {
         events: [],
         query: "",
         lat: "",
-        lon: ""     
+        lon: "",
+        searchMode: "restaurants", 
     }
 
     componentDidMount(){
@@ -22,9 +23,25 @@ class Search extends Component {
     // ==== OnClick Handlers ==== //
 
     handleButtonClick = () => {
-        // console.log(this.state.latitude)
-        // this.loadRestaurants(this.state.latitude, this.state.longitude);
-        this.loadEvents();
+        console.log(this.state.latitude)
+
+       if (this.state.searchMode === "restaurants"){
+         this.loadRestaurants(this.state.latitude, this.state.longitude)
+        }
+      else if  (this.state.searchMode === "events"){
+        this.loadEvents(this.state.latitude, this.state.longitude)
+      }}
+        
+    
+    
+    handleEventButtonClick = () => {
+        this.setState({searchMode: "events"})
+        this.loadEvents()
+    }
+
+    handleRestaurantsButtonClick = () => {
+        this.setState({searchMode: "restaurants"})
+        this.loadRestaurants(this.state.latitude, this.state.longitude)
     }
     // ==== API CALLS ==== //
     
@@ -65,7 +82,9 @@ class Search extends Component {
     }
         
 
-render () {
+render(){
+    // console.log(this.state.searchMode)
+
     return (
         <>
             <Container id="main-container" class="glassy-text" >
@@ -74,6 +93,12 @@ render () {
                     <h2 className="w-100 text-center mt-2">Search for local food & entertainment</h2>
                 </Card.Header>
                 <Card.Body>
+                <Button onClick={this.handleRestaurantsButtonClick}>
+                    Restaurants
+                </Button>
+                <Button onClick={this.handleEventButtonClick}>
+                    Events
+                </Button>
                 <InputGroup className="mb-3">
                 <FormControl className="wrapper"
                 placeholder="Tacos"
