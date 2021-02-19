@@ -10,7 +10,7 @@ function Navbar() {
 
 <img src="https://media.tenor.com/images/e19b269522c8b038097086e5703d192b/tenor.gif" alt="This will display an animated GIF" />
 
-  <Link className="navbar-brand" href="#">AXOLOTL</Link>
+  <Link className="navbar-brand" to="/">AXOLOTL</Link>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
