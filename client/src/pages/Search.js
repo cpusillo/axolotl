@@ -87,7 +87,7 @@ render(){
 
     return (
         <>
-            <Container id="main-container" class="glassy-text" >
+            <Container id="main-container" className="glassy-text" >
             <Card>
                 <Card.Header>
                     <h2 className="w-100 text-center mt-2">Search for local food & entertainment</h2>
@@ -116,7 +116,7 @@ render(){
             </Card>
 
             <Card className="mt-2 p-3">
-            {this.state.food.length != 0 ? (
+            {this.state.food.length !== 0 ? (
                  <SearchResults 
                      results={this.state.food} 
                  /> 
@@ -134,7 +134,7 @@ render(){
             ) : (
                 <p className="green"><FaCheckSquare/>  Ready to search!</p>
             )}
-            {this.state.events.length !=0 ? (
+            {this.state.events.length !== 0 ? (
                  <EventsResults 
                      results={this.state.events} 
                  /> 
