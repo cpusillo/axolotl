@@ -6,11 +6,13 @@ import {FaStar} from "react-icons/fa"
 import "./SearchResultsCard.css"
 
 class SearchResultsCard extends Component {
-
+    saveFoods = () => {
+        this.props.saveFoods(this.props)
+    }
 
     render() {
         return(
-            <Card key={this.props.key}>
+            <Card>
                 <Card.Header>
                     <Row>
                         <Col>
@@ -18,7 +20,7 @@ class SearchResultsCard extends Component {
                             <p><FaStar/> {this.props.rating}</p>
                         </Col>
                         <Col className="text-right">
-                            <Button><IoSaveSharp /></Button>
+                            <Button onClick={this.saveFoods}><IoSaveSharp /></Button>
                         </Col>
                     </Row>
                 </Card.Header>
@@ -30,7 +32,7 @@ class SearchResultsCard extends Component {
                     </Col>
                     <Col>
                     <p><IoTimeSharp/>: {this.props.timings}</p>
-                    <a href={this.props.menu_url} className="food-links" target="_blank" rel="noreferrer"><GiKnifeFork/>  Menu</a>
+                    <a href={this.props.menu_url} className="food-links" target="_blank" rel="noopener noreferrer"><GiKnifeFork/>  Menu</a>
                     
                     </Col>
                 </Row>

@@ -82,6 +82,19 @@ class Search extends Component {
     }
         
 
+    // ==== INTERNAL API METHODS ==== //
+
+    saveFoods = foodData => {
+        API.saveFoods({
+            id: foodData.id,
+            name: foodData.name,
+            cuisines: foodData.cuisines,
+            address: foodData.address,
+            menu_url: foodData.menu_url,
+            timings: foodData.timings
+        })
+    }
+
 render(){
     // console.log(this.state.searchMode)
 
@@ -119,6 +132,7 @@ render(){
             {this.state.food.length !== 0 ? (
                  <SearchResults 
                      results={this.state.food} 
+                     saveFoods={this.saveFoods}
                  /> 
             ) : (
                 <div>
