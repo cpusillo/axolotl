@@ -11,25 +11,31 @@ body{
   font-size: 0.8em;
   font-weight: bolder;
 }
-  #card {    
-   
+  #container {    
+   opacity: 0.8;
     margin-top: 100px;
     font-family: Lato;
     font-size: 1.4em;    
-    background-color: transparent;
-    border: none;
-    border-top:   5px solid #4EA5D9;    
-    border-bottom: 5px solid #4EA5D9;
-    outline: none;
-    color: #52c8e6;
+    /* background-color: transparent; */
+    
     padding-left: 10px; 
     width: 500px;
+    font-weight: bolder;
     
     
       
     
     
   }
+  #card {
+    border: none;
+    border-top:   5px solid #4EA5D9;    
+    border-bottom: 5px solid #4EA5D9;
+    outline: none;
+    color: #52c8e6;
+    font-weight: bolder;
+  }
+  
   #sign{
     font-weight: bolder;
     color: yellow;
@@ -42,11 +48,11 @@ body{
     /* top: -0px; */
     font-size: 1.8em;
     cursor: text;
-    color: cornsilk;    
+    color: black;    
     /* transition: all .2s;     */
   }
 #head{
-  color: rgb(15, 30, 248);
+  color: blue;
   font-weight: bolder;
   border: 0px;
 

@@ -74,7 +74,7 @@ render () {
                     <h2 className="w-100 text-center mt-2">Search for local food & entertainment</h2>
                 </Card.Header>
                 <Card.Body>
-                <InputGroup className="mb-3">
+                <InputGroup id="search" className="mb-3">
                 <FormControl className="wrapper"
                 placeholder="Tacos"
                 />
