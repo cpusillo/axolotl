@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Card, Form, Button, Alert } from 'react-bootstrap'
+import { Card, Form, Button, Alert, Container} from 'react-bootstrap'
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from 'react-router-dom'
 import "./signup.css";
@@ -37,7 +37,7 @@ async function handleSubmit(e){
 
     return (
         <>
-    
+    <Container id="container">
     <Card id="card">
         <Card.Body id="sign-up">
             <h2 id="head" className="text-center mb-3">Sign Up</h2>
@@ -65,6 +65,7 @@ async function handleSubmit(e){
             
         </Card.Body>
     </Card>
+    </Container>
     <div id="sign" className="w-100 text-center mt-2">
         Already have an account? <Link to="/login">Login</Link>
         
