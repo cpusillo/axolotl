@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react'
-import { Card, Form, Button, Alert } from 'react-bootstrap'
+import { Card, Form, Button, Alert, Container } from 'react-bootstrap'
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from 'react-router-dom'
-import './login.css';
+
 export default function Login(){
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -28,8 +28,9 @@ async function handleSubmit(e){
 
     return (
         <>
+       <Container id="container">
     <Card id="card">
-        <Card.Body id='login' >
+        <Card.Body id="sign-up">
             <h2 id="head" className="text-center mb-3">Log In</h2>
             {/* If there is an error with handleSubmit show it as a red alert */}
             {error && <Alert variant="danger">{error}</Alert>}
@@ -51,9 +52,11 @@ async function handleSubmit(e){
             </div>
         </Card.Body>
     </Card>
+    </Container> 
     <div id="sign" className="w-100 text-center mt-2">
         Don't have an account? What are you waiting for? <Link to="/signup" >Sign up!</Link>
     </div>
+    
         </>
     )
 }
