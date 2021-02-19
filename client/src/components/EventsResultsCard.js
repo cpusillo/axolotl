@@ -38,7 +38,7 @@ class EventsResultsCard extends Component {
                     </Col>
                     <Col>
                     <p><IoTimeSharp/><span style={{fontWeight: "bold"}}>Date/Time: </span> {moment(this.props.date).format("LLLL")}</p>
-                    <a href={this.props.url} className="event-links" target="_blank"><IoTicketSharp/><span style={{fontWeight: "bold"}}>Tickets/More Info </span></a>
+                    <a href={this.props.url} className="event-links" target="_blank" rel="noreferrer"><IoTicketSharp/><span style={{fontWeight: "bold"}}>Tickets/More Info </span></a>
                     </Col>
                 </Row>
             </Card>

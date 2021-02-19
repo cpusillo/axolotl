@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Card, Button, Row, Col } from 'react-bootstrap'
-import { IoFastFood, IoLocationSharp, IoTimeSharp, IoCalendarSharp, IoSaveSharp } from "react-icons/io5";
+import { IoFastFood, IoLocationSharp, IoTimeSharp, IoSaveSharp } from "react-icons/io5";
 import { GiKnifeFork } from "react-icons/gi";
+import {FaStar} from "react-icons/fa"
 import "./SearchResultsCard.css"
 
 class SearchResultsCard extends Component {
@@ -14,13 +15,14 @@ class SearchResultsCard extends Component {
                     <Row>
                         <Col>
                             <h3>{this.props.name}</h3>
-                            <img src={this.props.thumb} alt={this.props.name} class="img-rest"/>
+                            <p><FaStar/> {this.props.rating}</p>
                         </Col>
-                        <Col>
+                        <Col className="text-right">
                             <Button><IoSaveSharp /></Button>
                         </Col>
                     </Row>
                 </Card.Header>
+                <Card></Card>
                 <Row>
                     <Col>
                     <p><IoFastFood/>: {this.props.cuisines}</p>
@@ -28,8 +30,8 @@ class SearchResultsCard extends Component {
                     </Col>
                     <Col>
                     <p><IoTimeSharp/>: {this.props.timings}</p>
-                    <a href={this.props.menu_url} className="food-links" target="_blank"><GiKnifeFork/>  Menu</a>
-                    <a href={this.props.events_url} className="food-links"><IoCalendarSharp/>  Events</a>
+                    <a href={this.props.menu_url} className="food-links" target="_blank" rel="noreferrer"><GiKnifeFork/>  Menu</a>
+                    
                     </Col>
                 </Row>
             </Card>
