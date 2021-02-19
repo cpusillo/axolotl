@@ -7,6 +7,10 @@ import "./SearchResultsCard.css"
 
 class SearchResultsCard extends Component {
 
+    saveFoods = () => {
+        this.props.saveFoods(this.props)
+    }
+
 
     render() {
         return(
@@ -18,7 +22,7 @@ class SearchResultsCard extends Component {
                             <p><FaStar/> {this.props.rating}</p>
                         </Col>
                         <Col className="text-right">
-                            <Button><IoSaveSharp /></Button>
+                            <Button onClick={this.saveFoods}><IoSaveSharp /></Button>
                         </Col>
                     </Row>
                 </Card.Header>

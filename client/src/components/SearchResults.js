@@ -19,6 +19,7 @@ class SearchResults extends Component {
                     events_url={r.restaurant.events_url}
                     timings={r.restaurant.timings}
                     rating={r.restaurant.user_rating.aggregate_rating}
+                    saveFoods={this.props.saveFoods}
                 />
             ))
         )

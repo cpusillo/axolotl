@@ -80,6 +80,20 @@ class Search extends Component {
         console.log(`Latitude: ${lat}`);
         console.log(`Longitude: ${lon}`);
     }
+
+        // ==== INTERNAL API METHODS ==== //
+
+        saveFoods = foodData => {
+            API.saveFoods({
+                id: foodData.id,
+                name: foodData.name,
+                cuisines: foodData.cuisines,
+                address: foodData.address,
+                menu_url: foodData.menu_url,
+                timings: foodData.timings
+            })
+        }
+    
         
 
 render(){
@@ -119,6 +133,7 @@ render(){
             {this.state.food.length !== 0 ? (
                  <SearchResults 
                      results={this.state.food} 
+                     saveFoods={this.saveFoods}
                  /> 
             ) : (
                 <div>
