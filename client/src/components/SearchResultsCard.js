@@ -14,7 +14,7 @@ class SearchResultsCard extends Component {
 
     render() {
         return(
-            <Card key={this.props.key}>
+            <Card>
                 <Card.Header>
                     <Row>
                         <Col>
