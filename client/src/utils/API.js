@@ -19,8 +19,8 @@ export default {
     saveFoods: function(foodData) {
       return axios.post("/api/foods", foodData)
     },
-    deleteFoods: function(id) {
-      return axios.delete("/api/books" + id)
+    deleteFoods(id) {
+      return axios.delete("/api/foods/" + id)
     }
       }
 
