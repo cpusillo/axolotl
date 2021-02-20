@@ -52,6 +52,7 @@ class Search extends Component {
               //console.log(this.state.food)
         }).catch(err => console.log(err)) };
 
+    // SEATGEEK API CALL
      loadEvents = () => {
          API.getEvents()
          .then (res=> {this.setState({events: res.data}) 
@@ -91,6 +92,19 @@ class Search extends Component {
                 address: foodData.address,
                 menu_url: foodData.menu_url,
                 timings: foodData.timings
+            })
+        }
+
+        saveEvents = eventsData => {
+            API.saveEvents ({
+                id: eventsData.id,
+                title: eventsData.title,
+                type: eventsData.type,
+                venue: eventsData.venue,
+                address: eventsData.address,
+                extended_address: eventsData.extended_address,
+                url: eventsData.url,
+                date: eventsData.date
             })
         }
     
@@ -152,6 +166,7 @@ render(){
             {this.state.events.length !== 0 ? (
                  <EventsResults 
                      results={this.state.events} 
+                     saveEvents={this.saveEvents}
                  /> 
             ) : (
                 <div>
