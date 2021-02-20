@@ -6,6 +6,7 @@ import Dashboard from "./Dashboard"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import Search from "../pages/Search"
+import Saved from "../pages/Saved"
 import {Container} from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/forgot-password" component={ForgotPassword} />
 
                 <Route path="/search" component={Search} />
+                <Route path="/saved" component={Saved} />
               </Switch>
             </AuthProvider>
             </div>

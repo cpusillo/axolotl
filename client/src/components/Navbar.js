@@ -27,6 +27,18 @@ function Navbar() {
             >
               Search
             </Link>
+            </li>
+            <li className="nav-item">
+            <Link
+              to="/saved"
+              className={
+                window.location.pathname === "/Saved" || window.location.pathname === "/"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              Saved
+            </Link>
       </li>
     </ul>
     <ul className="navbar-nav ml-auto">

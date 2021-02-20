@@ -34,7 +34,7 @@ class SearchResultsCard extends Component {
                     </Col>
                     <Col>
                     <p><IoTimeSharp/>: {this.props.timings}</p>
-                    <a href={this.props.menu_url} className="food-links" target="_blank" rel="noreferrer"><GiKnifeFork/>  Menu</a>
+                    <a href={this.props.menu_url} className="food-links" target="_blank" rel="noopener noreferrer"><GiKnifeFork/>  Menu</a>
                     
                     </Col>
                 </Row>
