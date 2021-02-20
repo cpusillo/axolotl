@@ -104,13 +104,13 @@ render(){
             <Container id="main-container" className="glassy-text" >
             <Card>
                 <Card.Header>
-                    <h2 className="w-100 text-center mt-2">Search for local food & entertainment</h2>
+                    <h2 id="font" className="w-100 text-center mt-2">Search for Local Food & Entertainment</h2>
                 </Card.Header>
                 <Card.Body>
-                <Button onClick={this.handleRestaurantsButtonClick}>
+                <Button id="button" onClick={this.handleRestaurantsButtonClick}>
                     Restaurants
                 </Button>
-                <Button onClick={this.handleEventButtonClick}>
+                <Button id="button2" onClick={this.handleEventButtonClick}>
                     Events
                 </Button>
                 <InputGroup className="mb-3">

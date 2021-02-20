@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter&display=swap');
 
 body {
   height: 100%;
@@ -49,4 +50,20 @@ body {
     color: blue;
     border: 2px solid currentColor; /* Sets a solid, 2px wide, blue border to the element */
 display: flex; 
+}
+#button {
+  color: rgb(105,105,105);
+  background-color: rgb(220,220,220);
+  border: none;
+  font-weight: bold;
+}
+#button2 {
+  color: rgb(105,105,105);
+  background-color: rgb(220,220,220);
+  border: none;
+  font-weight: bold;
+}
+
+#font {
+  font-family: 'Bitter', serif;
 }
