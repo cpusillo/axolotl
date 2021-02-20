@@ -20,7 +20,7 @@ class SavedEventsResultsCard extends Component {
             <Card.Header>
                 <Row>
                 <Col>
-                <h3>{this.props.title}</h3>
+                <h5>{this.props.title}</h5>
                 </Col>
                 <Col className="text-right">
                 <Button variant="light"><FaPencilAlt/></Button>
@@ -41,6 +41,7 @@ class SavedEventsResultsCard extends Component {
                     </Col>
                 </Row>
         </Card>
+        
         )
     }
 }
