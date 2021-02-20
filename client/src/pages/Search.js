@@ -14,6 +14,8 @@ class Search extends Component {
         lat: "",
         lon: "",
         searchMode: "restaurants", 
+        bg1color: "",
+        bgcolor: "",
     }
 
     componentDidMount(){
@@ -27,21 +29,28 @@ class Search extends Component {
 
        if (this.state.searchMode === "restaurants"){
          this.loadRestaurants(this.state.latitude, this.state.longitude)
+         
         }
       else if  (this.state.searchMode === "events"){
         this.loadEvents(this.state.latitude, this.state.longitude)
+       
       }}
         
     
-    
+
+
     handleEventButtonClick = () => {
         this.setState({searchMode: "events"})
         this.loadEvents()
+        this.setState({bgColor: "darkblue"})
+        this.setState({bg1Color: ""})
     }
 
     handleRestaurantsButtonClick = () => {
         this.setState({searchMode: "restaurants"})
         this.loadRestaurants(this.state.latitude, this.state.longitude)
+        this.setState({bg1Color: "darkblue"})
+        this.setState({bgColor: ""})
     }
     // ==== API CALLS ==== //
     
@@ -107,10 +116,12 @@ render(){
                     <h2 className="w-100 text-center mt-2">Search for local food & entertainment</h2>
                 </Card.Header>
                 <Card.Body>
-                <Button onClick={this.handleRestaurantsButtonClick}>
+                <Button  style={{backgroundColor: this.state.bg1Color}}
+           onClick={this.handleRestaurantsButtonClick}>
                     Restaurants
                 </Button>
-                <Button onClick={this.handleEventButtonClick}>
+                <Button style={{backgroundColor: this.state.bgColor}}
+           onClick={this.handleEventButtonClick}>
                     Events
                 </Button>
                 <InputGroup className="mb-3">
