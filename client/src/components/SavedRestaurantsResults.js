@@ -7,7 +7,7 @@ class SavedRestaurantResults extends Component {
         return(
             this.props.results.map((r) => (
                 <SavedCard
-                id={r.id}
+                id={r._id}
                 key={r.id}
                 name={r.name}
                 cuisines={r.cuisines}

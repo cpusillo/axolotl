@@ -7,7 +7,7 @@ import { FaTrashAlt, FaPencilAlt } from "react-icons/fa"
 class SavedRestaurantsResultsCard extends Component {
 
     deleteFood = () => {
-        this.props.deleteFood(this.props)
+       this.props.deleteFood(this.props)
     }
     
     render(){
