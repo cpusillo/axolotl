@@ -4,12 +4,14 @@ import { FaSearchLocation, FaCheckSquare } from 'react-icons/fa'
 import API from "../utils/API"
 import SearchResults from "../components/SearchResults"
 import EventsResults from "../components/EventsResults"
+import BestResults from "../components/BestResults"
 import './search.css';
 
 class Search extends Component {
     state = { 
         food: [],
         events: [],
+        results: [],
         query: "",
         lat: "",
         lon: "",
@@ -19,20 +21,35 @@ class Search extends Component {
     componentDidMount(){
         this.getLocation();
     }
-    
-    // ==== OnClick Handlers ==== //
+
+    // ==== Handlers ==== //
 
     handleButtonClick = () => {
-        console.log(this.state.latitude)
+    //   
+    }
 
-       if (this.state.searchMode === "restaurants"){
-         this.loadRestaurants(this.state.latitude, this.state.longitude)
+    handleInputChange = event => {
+        this.setState({query: event.target.value})
+        const { food, events, query, results, searchMode} = this.state;
+
+        if (searchMode === "restaurants") {
+
+            if (query == ""){
+                return;
+            }
+            else {
+                const results = food.restaurants.filter(f => 
+                    f.restaurant.cuisines.includes(query));
+                this.setState({results})
+                //console.log(results)
+            }
         }
-      else if  (this.state.searchMode === "events"){
-        this.loadEvents(this.state.latitude, this.state.longitude)
-      }}
-        
-    
+
+        else if (searchMode === "events") {
+            return;
+        }
+
+    }
     
     handleEventButtonClick = () => {
         this.setState({searchMode: "events"})
@@ -113,14 +130,14 @@ render(){
                 <Button onClick={this.handleEventButtonClick}>
                     Events
                 </Button>
-                <InputGroup className="mb-3">
+                <InputGroup className="mb-3" onChange={this.handleInputChange}>
                 <FormControl className="wrapper"
                 placeholder="Tacos"
                 />
                 <InputGroup.Append>
                 <Button 
                     variant="secondary"
-                    onClick={this.handleButtonClick}
+                    //onClick={this.handleButtonClick}
                 ><FaSearchLocation />
                 </Button>
                 </InputGroup.Append>
@@ -130,6 +147,14 @@ render(){
             </Card>
 
             <Card className="mt-2 p-3">
+            {this.state.results.length !== 0 ? (
+                <BestResults
+                    results={this.state.results}
+                    saveFoods={this.saveFoods} />
+            ) : (
+                <p></p>
+            )}
+            
             {this.state.food.length !== 0 ? (
                  <SearchResults 
                      results={this.state.food} 
@@ -137,10 +162,13 @@ render(){
                  /> 
             ) : (
                 <div>
-                <p>Nothing to see here, try looking for some food!</p>
+                <p></p>
 
             </div>
             )}
+
+
+
             {!this.state.lat && !this.state.lon ? (
                 <div>
                 <p>Hold on, we're looking for your location</p>
@@ -155,10 +183,12 @@ render(){
                  /> 
             ) : (
                 <div>
-                <p>Nothing to see here, try looking for something to do!</p>
+                <p></p>
 
             </div>
             )}
+
+
             
             </Card>
             </Container>

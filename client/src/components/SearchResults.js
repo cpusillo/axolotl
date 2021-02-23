@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import SearchResultsCard from "./SearchResultsCard"
+import SearchBar from "./SearchBar"
 
 class SearchResults extends Component {
 
     render(){
-        console.log(this.props.results.restaurants)
         return (
             this.props.results.restaurants.map((r) => (
                 <SearchResultsCard
@@ -21,7 +21,8 @@ class SearchResults extends Component {
                     rating={r.restaurant.user_rating.aggregate_rating}
                     saveFoods={this.props.saveFoods}
                 />
-            ))
+            )
+            )
         )
     }
 

@@ -50,3 +50,11 @@ body {
     border: 2px solid currentColor; /* Sets a solid, 2px wide, blue border to the element */
 display: flex; 
 }
+
+.splash {
+  background-color: white;
+  height: 80vh;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}

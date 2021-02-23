@@ -1,9 +1,10 @@
 import React from "react"
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext"
 import"./navbar.css";
 // Depending on the current path, this component sets the "active" className on the appropriate navigation link item
 function Navbar() {
-
+  //const { currentUser, logout } = useAuth();
   return (  
   
 <nav id="nav" className="navbar navbar-expand-lg navbar-light bg-light" >
@@ -40,6 +41,11 @@ function Navbar() {
               Saved
             </Link>
       </li>
+
+            <li className="nav-item">
+            
+      </li>
+
     </ul>
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
