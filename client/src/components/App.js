@@ -7,6 +7,7 @@ import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import Search from "../pages/Search"
 import Saved from "../pages/Saved"
+import Splash from "../pages/Splash"
 import {Container} from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
@@ -21,16 +22,18 @@ function App() {
           <div className="w-100" width={{maxWidth:"400px"}}>
             <AuthProvider>
               <Switch>
-                <Route exact path="/" component={Search} />
+                <Route exact path="/" component={Splash} />
                 <PrivateRoute path="/update-profile" component={UpdateProfile} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
+                <PrivateRoute path ="/splash" component={Splash} />
+                <PrivateRoute path="/search" component={Search} />
+                <PrivateRoute path="/saved" component={Saved} />
 
                 <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />
                 <Route path="/forgot-password" component={ForgotPassword} />
 
-                <Route path="/search" component={Search} />
-                <Route path="/saved" component={Saved} />
+
               </Switch>
             </AuthProvider>
             </div>
