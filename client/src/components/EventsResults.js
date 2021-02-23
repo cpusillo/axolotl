@@ -37,7 +37,7 @@ class EventsResults extends Component{
                 address={e.venue.address}
                 extended_address={e.venue.extended_address}
                 date={e.datetime_local}
-                
+                saveEvents={this.props.saveEvents}
                 url={e.url}
                 
                 >Hello</EventsResultsCard>     

@@ -10,6 +10,9 @@ import "./EventsResultsCard";
 
 class EventsResultsCard extends Component {
 
+    saveEvents = () => {
+        this.props.saveEvents(this.props)
+    }
 
     render() {
         return(
@@ -24,15 +27,15 @@ class EventsResultsCard extends Component {
                             
                             <img src={this.props.image}  alt={this.props.title} class="img-rest" align="center"/>
                         </Col>
-                        <Col>
-                            <Button ><IoSaveSharp /></Button>
+                        <Col className="text-right">
+                        <Button onClick={this.saveEvents}><IoSaveSharp /></Button>
                         </Col>
                         
                     </Row>
                 </Card.Header>
                 <Row>
                     <Col>
-                    <p><BsFillLightningFill/> <span style={{fontWeight: "bold"}}>Event Type:</span> {this.props.type}</p>
+                    <p><BsFillLightningFill/> <span style={{fontWeight: "bold"}}>Event Type:</span> {this.props.type.replace(/_/g, " ").toUpperCase()}</p>
                     <p><BsImage/> <span style={{fontWeight: "bold"}}>Venue Name: </span> {this.props.venue}</p>
                     <p><IoLocationSharp/> <span style={{fontWeight: "bold"}}>Venue Address: </span> {this.props.address}, {this.props.extended_address}</p>
                     </Col>

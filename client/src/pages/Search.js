@@ -16,6 +16,8 @@ class Search extends Component {
         lat: "",
         lon: "",
         searchMode: "restaurants", 
+        bg1color: "",
+        bgcolor: "",
     }
 
     componentDidMount(){
@@ -54,10 +56,16 @@ class Search extends Component {
     handleEventButtonClick = () => {
         this.setState({searchMode: "events"})
         this.loadEvents()
+        this.setState({bgColor: "darkblue"})
+        this.setState({bg1Color: ""})
+        this.loadEvents();
     }
 
     handleRestaurantsButtonClick = () => {
         this.setState({searchMode: "restaurants"})
+        this.loadRestaurants(this.state.latitude, this.state.longitude)
+        this.setState({bg1Color: "darkblue"})
+        this.setState({bgColor: ""})
         this.loadRestaurants(this.state.latitude, this.state.longitude)
     }
     // ==== API CALLS ==== //
@@ -69,6 +77,7 @@ class Search extends Component {
               //console.log(this.state.food)
         }).catch(err => console.log(err)) };
 
+    // SEATGEEK API CALL
      loadEvents = () => {
          API.getEvents()
          .then (res=> {this.setState({events: res.data}) 
@@ -110,6 +119,19 @@ class Search extends Component {
                 timings: foodData.timings
             })
         }
+
+        saveEvents = eventsData => {
+            API.saveEvents ({
+                id: eventsData.id,
+                title: eventsData.title,
+                type: eventsData.type,
+                venue: eventsData.venue,
+                address: eventsData.address,
+                extended_address: eventsData.extended_address,
+                url: eventsData.url,
+                date: eventsData.date
+            })
+        }
     
         
 
@@ -124,10 +146,12 @@ render(){
                     <h2 className="w-100 text-center mt-2">Search for local food & entertainment</h2>
                 </Card.Header>
                 <Card.Body>
-                <Button onClick={this.handleRestaurantsButtonClick}>
+                <Button  style={{backgroundColor: this.state.bg1Color}}
+           onClick={this.handleRestaurantsButtonClick}>
                     Restaurants
                 </Button>
-                <Button onClick={this.handleEventButtonClick}>
+                <Button style={{backgroundColor: this.state.bgColor}}
+           onClick={this.handleEventButtonClick}>
                     Events
                 </Button>
                 <InputGroup className="mb-3" onChange={this.handleInputChange}>
@@ -180,6 +204,7 @@ render(){
             {this.state.events.length !== 0 ? (
                  <EventsResults 
                      results={this.state.events} 
+                     saveEvents={this.saveEvents}
                  /> 
             ) : (
                 <div>

@@ -21,6 +21,15 @@ export default {
     },
     deleteFoods(id) {
       return axios.delete("/api/foods/" + id)
-    }
-      }
+    },
 
+    getEventsDB: function() {
+      return axios.get("/api/events");
+    },
+    saveEvents: function(eventsData) {
+      return axios.post("/api/events", eventsData)
+    },
+    deleteEvents(id) {
+      return axios.delete("/api/events/" + id)
+      }
+    }
