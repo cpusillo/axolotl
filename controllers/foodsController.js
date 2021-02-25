@@ -5,7 +5,6 @@ module.exports = {
   findAll: function(req, res) {
     db.Food
       .find(req.query)
-      .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -23,8 +22,9 @@ module.exports = {
   },
   update: function(req, res) {
     db.Food
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+     .findOneAndUpdate({ _id: req.params.id }, 
+        {$set:{name: req.body.name, reservation: req.body.reservation, notes: req.body.notes}}, {new: true})
+     .then(dbModel => res.json(dbModel)) 
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {

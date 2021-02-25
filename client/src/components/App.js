@@ -8,6 +8,7 @@ import UpdateProfile from "./UpdateProfile"
 import Search from "../pages/Search"
 import Saved from "../pages/Saved"
 import Splash from "../pages/Splash"
+import Edit from "../pages/Edit"
 import {Container} from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom"
@@ -25,9 +26,9 @@ function App() {
                 <Route exact path="/" component={Splash} />
                 <PrivateRoute path="/update-profile" component={UpdateProfile} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
-                <PrivateRoute path ="/splash" component={Splash} />
                 <PrivateRoute path="/search" component={Search} />
                 <PrivateRoute path="/saved" component={Saved} />
+                <PrivateRoute path="/edit" component={Edit} />
 
                 <Route path="/signup" component={Signup} />
                 <Route path="/login" component={Login} />

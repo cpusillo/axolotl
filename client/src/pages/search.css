@@ -58,3 +58,8 @@ display: flex;
   border-radius: 10px;
   text-align: center;
 }
+
+.white {
+  background-color: white;
+  padding: 25px;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SavedCard from "./SavedRestaurantsResultsCard"
 
+
 class SavedRestaurantResults extends Component {
 
     render(){
@@ -14,7 +15,10 @@ class SavedRestaurantResults extends Component {
                 address={r.address}
                 menu_url={r.menu_url}
                 timings={r.timings}
+                reservation={r.reservation}
+                notes={r.notes}
                 deleteFood={this.props.deleteFood}
+                editFood={this.props.editFood}
                 />
             ))
         )

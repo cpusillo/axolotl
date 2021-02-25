@@ -5,20 +5,32 @@ import API from "../utils/API"
 import './search.css';
 import SavedRestaurantResults from "../components/SavedRestaurantsResults";
 import SavedEventsResults from "../components/SavedEventsResults";
+import firebase from "../firebase"
 
 class Saved extends Component {
 
     state = {
         foods: [],
-        events: []
+        events: [],
+        currentUser: ""
     }
 
     componentDidMount = () => {
         this.getSavedFoods();
         this.getSavedEvents();
+        this.getCurrentUser();
     }
 
+    getCurrentUser = () => {
+        var user = firebase.auth().currentUser.email;
+        console.log(user)
+        this.setState({currentUser: user})
+    }
+
+    // === FOOD API CALLS === //
+
     getSavedFoods = () => {
+        
         API.getFoods()
             .then(res => {
                 this.setState({ foods: res.data })
@@ -31,10 +43,18 @@ class Saved extends Component {
         window.location.reload()
     }
 
+    editFood = foodData => {
+        console.log(foodData.id)
+        API.editFoods(foodData.id, foodData.name)
+        .catch(err => console.log(err))
+    }
+
+    // === EVENTS API CALLS === //
+
     getSavedEvents = () => {
         API.getEventsDB()
             .then(res => {
-                this.setState({ events: res.data })
+                this.setState({ events: res.data })                                                                             
             }).catch(err => console.log(err))
     }
 
@@ -60,6 +80,7 @@ class Saved extends Component {
                                         <SavedRestaurantResults
                                             results={this.state.foods}
                                             deleteFood={this.deleteFood}
+                                            editFood={this.editFood}
                                         />
                                     ) : (<p>No Restaurants Saved!</p>)}
                                 </Card.Body>

@@ -4,8 +4,9 @@ import { FaSearchLocation, FaCheckSquare } from 'react-icons/fa'
 import API from "../utils/API"
 import SearchResults from "../components/SearchResults"
 import EventsResults from "../components/EventsResults"
-import BestResults from "../components/BestResults"
+import { useAuth } from "../contexts/AuthContext"
 import './search.css';
+import firebase from "../firebase"
 
 class Search extends Component {
     state = { 
@@ -18,10 +19,18 @@ class Search extends Component {
         searchMode: "restaurants", 
         bg1color: "",
         bgcolor: "",
+        currentUser: ""
     }
 
     componentDidMount(){
         this.getLocation();
+        this.getCurrentUser();
+    }
+
+    getCurrentUser = () => {
+        var user = firebase.auth().currentUser.email;
+        console.log(user)
+        this.setState({currentUser: user})
     }
 
     // ==== Handlers ==== //
@@ -116,7 +125,10 @@ class Search extends Component {
                 cuisines: foodData.cuisines,
                 address: foodData.address,
                 menu_url: foodData.menu_url,
-                timings: foodData.timings
+                timings: foodData.timings,
+                reservation: "",
+                notes: "",
+                user: this.state.currentUser
             })
         }
 
@@ -171,13 +183,6 @@ render(){
             </Card>
 
             <Card className="mt-2 p-3">
-            {this.state.results.length !== 0 ? (
-                <BestResults
-                    results={this.state.results}
-                    saveFoods={this.saveFoods} />
-            ) : (
-                <p></p>
-            )}
             
             {this.state.food.length !== 0 ? (
                  <SearchResults 
