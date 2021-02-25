@@ -1,12 +1,12 @@
 import React from "react"
 import { Link, useHistory } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext"
+import firebase from "../firebase"
 import"./navbar.css";
 // Depending on the current path, this component sets the "active" className on the appropriate navigation link item
 function Navbar() {
   //const { currentUser, logout } = useAuth();
   return (  
-  
+
 <nav id="nav" className="navbar navbar-expand-lg navbar-light bg-light" >
 
 <img src="https://media.tenor.com/images/e19b269522c8b038097086e5703d192b/tenor.gif" alt="This will display an animated GIF" />

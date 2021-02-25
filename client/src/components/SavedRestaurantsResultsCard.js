@@ -1,18 +1,21 @@
 import React, { Component } from 'react'
-import { Card, Row, Col, Button } from 'react-bootstrap'
-import { IoFastFood, IoLocationSharp, IoTimeSharp } from "react-icons/io5";
+import { Card, Row, Col, Button, Modal } from 'react-bootstrap'
+import { IoFastFood, IoLocationSharp, IoTimeSharp, } from "react-icons/io5";
 import { GiKnifeFork } from "react-icons/gi";
-import { FaTrashAlt, FaPencilAlt } from "react-icons/fa"
+import { FaTrashAlt, FaEdit } from "react-icons/fa"
+import Edit from "./Edit"
+import { Link, useHistory } from "react-router-dom";
 
 class SavedRestaurantsResultsCard extends Component {
 
     deleteFood = () => {
        this.props.deleteFood(this.props)
     }
-    
+
     render(){
-        console.log(this.props.id)
+        // console.log(this.props.id)
         return(
+            <div>
             <Card key={this.props.id}>
             <Card.Header>
                 <Row>
@@ -20,7 +23,15 @@ class SavedRestaurantsResultsCard extends Component {
                 <h3>{this.props.name}</h3>
                 </Col>
                 <Col className="text-right">
-                <Button variant="light"><FaPencilAlt/></Button>
+                    <Edit 
+                        id ={this.props.id}
+                    />
+                {/* <Link to
+                ={{
+                    pathname: "/edit",
+                    search: this.props.id
+                }}> */}
+                {/* <Button variant="light"><FaEdit /></Button></Link> */}
                 <Button variant="danger" onClick={this.deleteFood}><FaTrashAlt/></Button>
                 </Col>
                         
@@ -37,7 +48,19 @@ class SavedRestaurantsResultsCard extends Component {
                 
                 </Col>
             </Row>
+            <Row>
+                <Col>
+                <p>Notes: {this.props.notes}</p>
+                </Col>
+                <Col>
+                <p>Reservation: {this.props.reservation}</p>
+                </Col>
+            </Row>
+
         </Card>
+
+
+</div>
         )
     }
 }

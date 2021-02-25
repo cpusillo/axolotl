@@ -23,8 +23,11 @@ module.exports = {
     },
     update: function(req, res) {
       db.Events
-        .findOneAndUpdate({ _id: req.params.id }, req.body)
-        .then(dbModel => res.json(dbModel))
+       .findOneAndUpdate({ _id: req.params.id }, 
+          {$set:
+              {name: req.body.name, reservation: req.body.reservation, notes: req.body.notes}
+            }, {new: true})
+       .then(dbModel => res.json(dbModel)) 
         .catch(err => res.status(422).json(err));
     },
     remove: function(req, res) {

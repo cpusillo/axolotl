@@ -16,8 +16,14 @@ export default {
     getFoods: function() {
       return axios.get("/api/foods");
     },
+    getFood: function(id) {
+      return axios.get("/api/foods/" + id)
+    },
     saveFoods: function(foodData) {
       return axios.post("/api/foods", foodData)
+    },
+    editFoods: function(id, foodData) {
+      return axios.put("/api/foods/" + id, foodData)
     },
     deleteFoods(id) {
       return axios.delete("/api/foods/" + id)
@@ -25,6 +31,9 @@ export default {
 
     getEventsDB: function() {
       return axios.get("/api/events");
+    },
+    editEvents: function(id, eventsData) {
+      return axios.put("/api/foods/" + id, eventsData)
     },
     saveEvents: function(eventsData) {
       return axios.post("/api/events", eventsData)

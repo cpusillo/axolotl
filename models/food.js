@@ -6,7 +6,10 @@ const foodSchema = new Schema({
   cuisines: { type: String, required: true },
   address: { type: String, required: true },
   menu_url: { type: String, required: true },
-  timings: { type: String, required: true }
+  timings: { type: String, required: true },
+  reservation: {type: String},
+  notes: {type: String},
+  user: {type: String}
 
 });
 

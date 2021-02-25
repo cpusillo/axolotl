@@ -14,7 +14,7 @@ class SavedEventsResultsCard extends Component {
     }
     
     render(){
-        console.log(this.props.id)
+        //console.log(this.props.id)
         return(
             <Card key={this.props.id}>
             <Card.Header>
