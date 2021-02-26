@@ -75,7 +75,7 @@ class Saved extends Component {
                                     <h2 className="w-100 text-center mt-2">Restaurants you want to eat at!</h2>
                                 </Card.Header>
                                 <Card.Body>
-                                    <b>Restaurants</b>
+                                    <h4>Restaurants</h4>
                                     {this.state.foods.length !== 0 ? (
                                         <SavedRestaurantResults
                                             results={this.state.foods}
@@ -95,7 +95,7 @@ class Saved extends Component {
                                     <h2 className="w-100 text-center mt-2">Events you would like to go to!</h2>
                                 </Card.Header>
                                 <Card.Body>
-                                    <b>Events</b>
+                                    <h4>Events</h4>
                                     {this.state.events.length !== 0 ? (
                                         <SavedEventsResults
                                             results={this.state.events}

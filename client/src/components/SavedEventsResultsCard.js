@@ -18,16 +18,23 @@ class SavedEventsResultsCard extends Component {
         return(
             <Card key={this.props.id}>
             <Card.Header>
-                <Row>
-                <Col>
+                <Row className="text-center">
                 <h5>{this.props.title}</h5>
-                </Col>
-                <Col className="text-right">
+                </Row>
+                <br></br>
+                <Row>
+                <Col className="text-center">
                 <Button variant="light"><FaPencilAlt/></Button>
                 <Button variant="danger" onClick={this.deleteEvents}><FaTrashAlt/></Button>
                 </Col>
-                        
                 </Row>
+                <hr></hr>
+                <Row>
+                <Col>
+                <p><span style={{fontWeight: "bold"}}> Notes: </span> {this.props.notes}</p>
+                </Col>
+                
+            </Row>
             </Card.Header>
             <Row>
                     <Col>
@@ -40,6 +47,8 @@ class SavedEventsResultsCard extends Component {
                     <a href={this.props.url} className="event-links" target="_blank" rel="noopener noreferrer"><IoTicketSharp/><span style={{fontWeight: "bold"}}>Tickets/More Info </span></a>
                     </Col>
                 </Row>
+                <hr></hr>
+                
         </Card>
         
         )
