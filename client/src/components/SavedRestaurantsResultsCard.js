@@ -15,17 +15,16 @@ class SavedRestaurantsResultsCard extends Component {
     render(){
         // console.log(this.props.id)
         return(
-            <div>
             <Card key={this.props.id}>
             <Card.Header>
                 <Row>
-                <Col>
-                <h3>{this.props.name}</h3>
-                </Col>
-                <Col className="text-right">
+                <Col className="text-center">
+                <h5>{this.props.name}</h5>
+                <br></br>
                     <Edit 
                         id ={this.props.id}
                     />
+                    
                 {/* <Link to
                 ={{
                     pathname: "/edit",
@@ -36,31 +35,33 @@ class SavedRestaurantsResultsCard extends Component {
                 </Col>
                         
                 </Row>
+                <hr></hr>
+                <Row>
+                <Col>
+                <p><span style={{fontWeight: "bold"}}> Notes: </span> {this.props.notes}</p>
+                </Col>
+                <Col>
+                <p><span style={{fontWeight: "bold"}}> Reservations: </span> {this.props.reservation}</p>
+                </Col>
+            </Row>
             </Card.Header>
             <Row>
                 <Col>
-                <p><IoFastFood/>: {this.props.cuisines}</p>
-                <p><IoLocationSharp/>: {this.props.address}</p>
+                <p><IoFastFood/><span style={{fontWeight: "bold"}}> Cusine Type:</span> {this.props.cuisines}</p>
+                <p><IoLocationSharp/> <span style={{fontWeight: "bold"}}> Address: </span> {this.props.address}</p>
                 </Col>
                 <Col>
-                <p><IoTimeSharp/>: {this.props.timings}</p>
-                <a href={this.props.menu_url} className="food-links" target="_blank" rel="noopener noreferrer"><GiKnifeFork/>  Menu</a>
+                <p><IoTimeSharp/> <span style={{fontWeight: "bold"}}> Hours: </span>{this.props.timings}</p>
+                <a href={this.props.menu_url} className="food-links" target="_blank" rel="noopener noreferrer"><GiKnifeFork/>  <span style={{fontWeight: "bold"}}> Menu </span></a>
                 
                 </Col>
             </Row>
-            <Row>
-                <Col>
-                <p>Notes: {this.props.notes}</p>
-                </Col>
-                <Col>
-                <p>Reservation: {this.props.reservation}</p>
-                </Col>
-            </Row>
+            
 
         </Card>
 
 
-</div>
+
         )
     }
 }
