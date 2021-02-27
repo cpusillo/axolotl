@@ -68,7 +68,7 @@ class Search extends Component {
         this.setState({bgColor: "darkblue"})
         this.setState({bg1Color: ""})
         this.loadEvents();
-        this.setState({food:"", results:""})
+        this.setState({food:""})
     }
 
     handleRestaurantsButtonClick = () => {
@@ -78,7 +78,7 @@ class Search extends Component {
         this.setState({bg1Color: "darkblue"})
         this.setState({bgColor: ""})
         this.loadRestaurants(this.state.latitude, this.state.longitude)
-        this.setState({events:"", results:""})
+        this.setState({events:""})
     }
 
     
@@ -127,17 +127,17 @@ class Search extends Component {
         // ==== INTERNAL API METHODS ==== //
 
         saveFoods = foodData => {
-            API.saveFoods({
-                id: foodData.id,
-                name: foodData.name,
-                cuisines: foodData.cuisines,
-                address: foodData.address,
-                menu_url: foodData.menu_url,
-                timings: foodData.timings,
-                reservation: "",
-                notes: ""
+            // API.saveFoods({
+            //     id: foodData.id,
+            //     name: foodData.name,
+            //     cuisines: foodData.cuisines,
+            //     address: foodData.address,
+            //     menu_url: foodData.menu_url,
+            //     timings: foodData.timings,
+            //     reservation: "",
+            //     notes: ""
                 // user: this.state.currentUser
-            })
+            // })
         }
 
         saveEvents = eventsData => {
