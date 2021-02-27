@@ -33,12 +33,12 @@ class Search extends Component {
         this.setState({currentUser: user})
     }
 
+    
+
     // ==== Handlers ==== //
 
-    handleButtonClick = () => {
-    //   
-    }
 
+        
     handleInputChange = event => {
         this.setState({query: event.target.value})
         const { food, events, query, results, searchMode} = this.state;
@@ -62,21 +62,29 @@ class Search extends Component {
 
     }
     
+    
     handleEventButtonClick = () => {
         this.setState({searchMode: "events"})
-        this.loadEvents()
         this.setState({bgColor: "darkblue"})
         this.setState({bg1Color: ""})
         this.loadEvents();
+        this.setState({food:"", results:""})
     }
 
     handleRestaurantsButtonClick = () => {
+    
+        
         this.setState({searchMode: "restaurants"})
-        this.loadRestaurants(this.state.latitude, this.state.longitude)
         this.setState({bg1Color: "darkblue"})
         this.setState({bgColor: ""})
         this.loadRestaurants(this.state.latitude, this.state.longitude)
+        this.setState({events:"", results:""})
     }
+
+    
+    
+
+    
     // ==== API CALLS ==== //
     
     // ZOMATO API CALL
@@ -127,8 +135,8 @@ class Search extends Component {
                 menu_url: foodData.menu_url,
                 timings: foodData.timings,
                 reservation: "",
-                notes: "",
-                user: this.state.currentUser
+                notes: ""
+                // user: this.state.currentUser
             })
         }
 
