@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import { Card, Row, Col, Button, Modal } from 'react-bootstrap'
 import { IoFastFood, IoLocationSharp, IoTimeSharp, } from "react-icons/io5";
 import { GiKnifeFork } from "react-icons/gi";
-import { FaTrashAlt, FaEdit } from "react-icons/fa"
-import Edit from "./Edit"
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
+import { CgNotes } from "react-icons/cg";
+import Edit from "./Edit";
 import { Link, useHistory } from "react-router-dom";
 
 class SavedRestaurantsResultsCard extends Component {
@@ -38,7 +39,7 @@ class SavedRestaurantsResultsCard extends Component {
                 <hr></hr>
                 <Row>
                 <Col>
-                <p><span style={{fontWeight: "bold"}}> Notes: </span> {this.props.notes}</p>
+                <p><CgNotes/><span style={{fontWeight: "bold"}}> Notes: </span> {this.props.notes}</p>
                 </Col>
                 <Col>
                 <p><span style={{fontWeight: "bold"}}> Reservations: </span> {this.props.reservation}</p>

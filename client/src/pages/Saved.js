@@ -5,7 +5,7 @@ import API from "../utils/API"
 import './search.css';
 import SavedRestaurantResults from "../components/SavedRestaurantsResults";
 import SavedEventsResults from "../components/SavedEventsResults";
-import firebase from "../firebase"
+import firebase from "../firebase";
 
 class Saved extends Component {
 
@@ -64,6 +64,13 @@ class Saved extends Component {
         window.location.reload()
     }
 
+    editEvents = eventData => {
+        console.log(eventData.notes)
+        console.log(eventData.id)
+        API.editEvents(eventData.id, eventData.notes)
+        .catch(err => console.log(err))
+    }
+
     render() {
         return (
 
@@ -100,6 +107,7 @@ class Saved extends Component {
                                         <SavedEventsResults
                                             results={this.state.events}
                                             deleteEvents={this.deleteEvents}
+                                            editEvents={this.editEvents}
                                         />
                                         ) : (<p>No Events Saved</p>)}
 
