@@ -7,7 +7,7 @@ function Navbar() {
   //const { currentUser, logout } = useAuth();
   return (  
 
-<nav id="nav" className="navbar navbar-expand-lg navbar-dark bg-light" >
+<nav id="nav" className="navbar navbar-expand-lg navbar bg-dark" >
 
 <img src="https://media.tenor.com/images/e19b269522c8b038097086e5703d192b/tenor.gif" alt="This will display an animated GIF" />
 
