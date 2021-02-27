@@ -10,7 +10,7 @@ export default {
             },
    // SeatGeek API Call  
     getEvents(){
-      return axios.get(`https://api.seatgeek.com/2/events?&client_id=${process.env.REACT_APP_SEATGEEK_API_KEY}`)
+      return axios.get(`https://api.seatgeek.com/2/events?geoip=true&range=15mi&client_id=${process.env.REACT_APP_SEATGEEK_API_KEY}`)
     },
 
     getFoods: function() {
