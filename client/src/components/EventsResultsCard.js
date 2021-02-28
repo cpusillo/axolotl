@@ -20,15 +20,15 @@ class EventsResultsCard extends Component {
                 <Card.Header>
                     <Row>
                     <h4><span style={{fontWeight: "bold"}}>{this.props.title}</span></h4>
+                   
                     </Row>    
 
                     <Row>    
                         <Col>
-                            
-                            <img src={this.props.image}  alt={this.props.title} class="img-rest" align="center"/>
+                            <img src={this.props.image}  alt={this.props.title}/>
                         </Col>
-                        <Col className="text-right">
-                        <Button onClick={this.saveEvents}><IoSaveSharp /></Button>
+                        <Col className = "text-right">
+                         <Button onClick={this.saveEvents}><IoSaveSharp /></Button>
                         </Col>
                         
                     </Row>

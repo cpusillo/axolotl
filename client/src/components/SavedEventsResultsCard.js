@@ -4,7 +4,10 @@ import { IoLocationSharp, IoTicketSharp, IoTimeSharp } from "react-icons/io5";
 import { BsImage } from "react-icons/bs";
 import { BsFillLightningFill } from "react-icons/bs";
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa"
+import { CgNotes } from "react-icons/cg";
 import moment from 'moment';
+import EditEvents from "./EditEvents";
+
 
 
 class SavedEventsResultsCard extends Component {
@@ -24,14 +27,22 @@ class SavedEventsResultsCard extends Component {
                 <br></br>
                 <Row>
                 <Col className="text-center">
-                <Button variant="light"><FaPencilAlt/></Button>
+                <EditEvents 
+                        id ={this.props.id}
+                    />
+                {/* <Link to
+                ={{
+                    pathname: "/edit",
+                    search: this.props.id
+                }}> */}
+                {/* <Button variant="light"><FaEdit /></Button></Link> */}
                 <Button variant="danger" onClick={this.deleteEvents}><FaTrashAlt/></Button>
                 </Col>
                 </Row>
                 <hr></hr>
                 <Row>
                 <Col>
-                <p><span style={{fontWeight: "bold"}}> Notes: </span> {this.props.notes}</p>
+                <p><CgNotes/><span style={{fontWeight: "bold"}}> Notes: </span> {this.props.notes}</p>
                 </Col>
                 
             </Row>

@@ -8,7 +8,9 @@ const eventsSchema = new Schema({
   address: {type: String, required: true},
   extended_address: {type: String, required: true},
   date: {type: String, required: true},
-  url: {type: String, required: true}
+  url: {type: String, required: true},
+  notes: {type: String},
+  user: {type: String}
 });
 
 const events = mongoose.model("events", eventsSchema);

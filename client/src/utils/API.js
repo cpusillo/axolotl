@@ -32,8 +32,11 @@ export default {
     getEventsDB: function() {
       return axios.get("/api/events");
     },
+    getEvent: function(id) {
+      return axios.get("/api/events/" + id)
+    },
     editEvents: function(id, eventsData) {
-      return axios.put("/api/foods/" + id, eventsData)
+      return axios.put("/api/events/" + id, eventsData)
     },
     saveEvents: function(eventsData) {
       return axios.post("/api/events", eventsData)
