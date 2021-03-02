@@ -19,8 +19,7 @@ class Search extends Component {
         searchMode: "restaurants", 
         bg1color: "",
         bgcolor: "",
-        currentUser: "",
-        clicked: false
+        currentUser: ""
     }
 
     componentDidMount(){
@@ -60,10 +59,7 @@ class Search extends Component {
         }
 
     }
-    
-    handleButtonClick = () => {
-        this.setState({clicked:true})
-    }
+
     
     handleEventButtonClick = () => {
         this.setState({searchMode: "events"})
@@ -176,13 +172,6 @@ render(){
                 <FormControl className="wrapper"
                 placeholder="Tacos"
                 />
-                <InputGroup.Append>
-                <Button 
-                    variant="secondary"
-                    onClick={this.handleButtonClick}
-                ><FaSearchLocation />
-                </Button>
-                </InputGroup.Append>
                 </InputGroup>
                 </Card.Body>
 
@@ -190,7 +179,7 @@ render(){
 
             <Card className="mt-2 p-3">
 
-            {this.state.clicked == true && this.state.results.length !== 0 && this.state.searchMode !== "events" ? (
+            {this.state.results.length !== 0 && this.state.searchMode !== "events" ? (
                  <BestResults 
                      results={this.state.results} 
                      saveFoods={this.saveFoods}
