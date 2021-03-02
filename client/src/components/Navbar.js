@@ -65,9 +65,7 @@ function Navbar() {
                   </Dropdown.Toggle>
                   <Dropdown.Menu>
                   <Dropdown.Item><Link to="/dashboard" className={window.location.pathname === "/dashboard" || window.location.pathname === "/" ? "nav-link": "nav-link"}>Dashboard</Link></Dropdown.Item>
-
                   </Dropdown.Menu>
-                 
                 </Dropdown>
                 )
                 :

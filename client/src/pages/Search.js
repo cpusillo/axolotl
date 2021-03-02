@@ -4,7 +4,7 @@ import { FaSearchLocation, FaCheckSquare } from 'react-icons/fa'
 import API from "../utils/API"
 import SearchResults from "../components/SearchResults"
 import EventsResults from "../components/EventsResults"
-import { useAuth } from "../contexts/AuthContext"
+import BestResults from "../components/BestResults"
 import './search.css';
 import firebase from "../firebase"
 
@@ -19,7 +19,8 @@ class Search extends Component {
         searchMode: "restaurants", 
         bg1color: "",
         bgcolor: "",
-        currentUser: ""
+        currentUser: "",
+        clicked: false
     }
 
     componentDidMount(){
@@ -35,10 +36,8 @@ class Search extends Component {
 
     
 
-    // ==== Handlers ==== //
+    // ==== Handlers ==== //        
 
-
-        
     handleInputChange = event => {
         this.setState({query: event.target.value})
         const { food, events, query, results, searchMode} = this.state;
@@ -52,7 +51,7 @@ class Search extends Component {
                 const results = food.restaurants.filter(f => 
                     f.restaurant.cuisines.includes(query));
                 this.setState({results})
-                //console.log(results)
+                console.log(results)
             }
         }
 
@@ -62,6 +61,9 @@ class Search extends Component {
 
     }
     
+    handleButtonClick = () => {
+        this.setState({clicked:true})
+    }
     
     handleEventButtonClick = () => {
         this.setState({searchMode: "events"})
@@ -177,7 +179,7 @@ render(){
                 <InputGroup.Append>
                 <Button 
                     variant="secondary"
-                    //onClick={this.handleButtonClick}
+                    onClick={this.handleButtonClick}
                 ><FaSearchLocation />
                 </Button>
                 </InputGroup.Append>
@@ -187,6 +189,18 @@ render(){
             </Card>
 
             <Card className="mt-2 p-3">
+
+            {this.state.clicked == true && this.state.results.length !== 0 && this.state.searchMode !== "events" ? (
+                 <BestResults 
+                     results={this.state.results} 
+                     saveFoods={this.saveFoods}
+                 /> 
+            ) : (
+                <div>
+                <p></p>
+
+            </div>
+            )}
             
             {this.state.food.length !== 0 ? (
                  <SearchResults 
