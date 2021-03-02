@@ -1,6 +1,8 @@
 .splash{
-height: auto;
+height: 500px;
 opacity: 0.9;
+text-align: left;
+background-image: url('https://files.slack.com/files-pri/T01A99BBD5E-F01QMU0LNSC/cute-funny-snaxolotl2.jpg');
 }
 
 .lead{
