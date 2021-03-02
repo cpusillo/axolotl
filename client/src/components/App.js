@@ -16,6 +16,7 @@ import PrivateRoute from "./PrivateRoute"
 import Footer from "./footer"
 
 function App() {
+  
   return (
 
         <Router>
