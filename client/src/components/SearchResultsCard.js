@@ -25,8 +25,7 @@ class SearchResultsCard extends Component {
 
   };
 
-  render() {console.log(this.popoverContainer.current);
-    console.log(this.popoverButton.current);
+  render() {
            
     return (
       <Card>

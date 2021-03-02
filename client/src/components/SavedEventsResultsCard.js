@@ -17,7 +17,7 @@ class SavedEventsResultsCard extends Component {
     }
     
     render(){
-        //console.log(this.props.id)
+        console.log(this.props.notes)
         return(
             <Card key={this.props.id}>
             <Card.Header>
@@ -30,19 +30,15 @@ class SavedEventsResultsCard extends Component {
                 <EditEvents 
                         id ={this.props.id}
                     />
-                {/* <Link to
-                ={{
-                    pathname: "/edit",
-                    search: this.props.id
-                }}> */}
-                {/* <Button variant="light"><FaEdit /></Button></Link> */}
                 <Button variant="danger" onClick={this.deleteEvents}><FaTrashAlt/></Button>
                 </Col>
                 </Row>
                 <hr></hr>
                 <Row>
                 <Col>
-                <p><CgNotes/><span style={{fontWeight: "bold"}}> Notes: </span> {this.props.notes}</p>
+                <p><CgNotes/>
+                <span style={{fontWeight: "bold"}}>
+                     Notes: </span> {this.props.notes}</p>
                 </Col>
                 
             </Row>
