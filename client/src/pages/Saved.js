@@ -44,7 +44,6 @@ class Saved extends Component {
     }
 
     editFood = foodData => {
-        console.log(foodData.id)
         API.editFoods(foodData.id, foodData.name)
         .catch(err => console.log(err))
     }
@@ -65,8 +64,6 @@ class Saved extends Component {
     }
 
     editEvents = eventData => {
-        console.log(eventData.notes)
-        console.log(eventData.id)
         API.editEvents(eventData.id, eventData.notes)
         .catch(err => console.log(err))
     }

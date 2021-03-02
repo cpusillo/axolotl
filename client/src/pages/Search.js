@@ -72,17 +72,12 @@ class Search extends Component {
     }
 
     handleRestaurantsButtonClick = () => {
-    
-        
         this.setState({searchMode: "restaurants"})
         this.setState({bg1Color: "darkblue"})
         this.setState({bgColor: ""})
         this.loadRestaurants(this.state.latitude, this.state.longitude)
         this.setState({events:""})
     }
-
-    
-    
 
     
     // ==== API CALLS ==== //
@@ -98,7 +93,7 @@ class Search extends Component {
      loadEvents = () => {
          API.getEvents()
          .then (res=> {this.setState({events: res.data}) 
-                // console.log(this.state.events)
+        console.log(this.state.events)
          }).catch(err =>console.log(err))
 };
 
@@ -127,17 +122,17 @@ class Search extends Component {
         // ==== INTERNAL API METHODS ==== //
 
         saveFoods = foodData => {
-            // API.saveFoods({
-            //     id: foodData.id,
-            //     name: foodData.name,
-            //     cuisines: foodData.cuisines,
-            //     address: foodData.address,
-            //     menu_url: foodData.menu_url,
-            //     timings: foodData.timings,
-            //     reservation: "",
-            //     notes: ""
-                // user: this.state.currentUser
-            // })
+            API.saveFoods({
+                id: foodData.id,
+                name: foodData.name,
+                cuisines: foodData.cuisines,
+                address: foodData.address,
+                menu_url: foodData.menu_url,
+                timings: foodData.timings,
+                reservation: "",
+                notes: "",
+                user: this.state.currentUser
+            })
         }
 
         saveEvents = eventsData => {
@@ -149,7 +144,8 @@ class Search extends Component {
                 address: eventsData.address,
                 extended_address: eventsData.extended_address,
                 url: eventsData.url,
-                date: eventsData.date
+                date: eventsData.date,
+                notes: ""
             })
         }
     
@@ -204,17 +200,7 @@ render(){
             </div>
             )}
 
-
-
-            {!this.state.lat && !this.state.lon ? (
-                <div>
-                <p>Hold on, we're looking for your location</p>
-                <ProgressBar variant="success" animated now={100} />
-                </div>
-            ) : (
-                <p className="green"><FaCheckSquare/>  Ready to search!</p>
-            )}
-            {this.state.events.length !== 0 ? (
+{this.state.events.length !== 0 ? (
                  <EventsResults 
                      results={this.state.events} 
                      saveEvents={this.saveEvents}
@@ -226,6 +212,17 @@ render(){
             </div>
             )}
 
+
+
+            {!this.state.lat && !this.state.lon ? (
+                <div>
+                <p>Hold on, we're looking for your location</p>
+                <ProgressBar variant="success" animated now={100} />
+                </div>
+            ) : (
+                <p className="green"><FaCheckSquare/>  Ready to search!</p>
+            )}
+                   
 
             
             </Card>

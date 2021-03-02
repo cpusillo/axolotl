@@ -12,12 +12,10 @@ class Edit extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.id)
         const id = this.props.id
         axios.get("/api/foods/"+ id)
         .then(res => {
             this.setState({foods: res.data});
-            console.log(this.state.foods)
         })
     }
 
@@ -32,8 +30,6 @@ class Edit extends Component {
         const state = this.state.foods
         state[e.target.name] = e.target.value;
         this.setState({foods:state})
-
-        console.log(this.state.foods.name)
     }
 
 
@@ -57,19 +53,10 @@ render() {
     
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Edit Record for: {this.props.name} </Modal.Title>
+              <Modal.Title>Edit Record for: {this.state.foods.name} </Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <Form onSubmit={this.handleFormSubmit}>
-                <Form.Group id="name">
-                    <small>Restaurant Name: </small>
-                    <Form.Control   type="name" 
-                                    name="name" 
-                                    placeholder={this.state.foods.name}
-                                    onChange={this.handleChange} 
-                    />
-                </Form.Group>
-
                 <Form.Group id="reservation">
                     <small>Reservation: </small>
                     <Form.Control   type="name" 

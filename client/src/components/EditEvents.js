@@ -55,7 +55,7 @@ render() {
     
           <Modal show={this.state.show} onHide={this.handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Edit Record for: {this.props.title} </Modal.Title>
+              <Modal.Title>Edit Record for: {this.state.events.title} </Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <Form onSubmit={this.handleFormSubmit}>

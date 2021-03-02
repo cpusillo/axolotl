@@ -18,6 +18,7 @@ class SavedEventsResults extends Component {
                 date={e.date}
                 url={e.url}
                 deleteEvents={this.props.deleteEvents}
+                notes={e.notes}
                 ></SavedEventsCard>
             ))
         )
