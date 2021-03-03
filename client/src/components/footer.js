@@ -3,17 +3,16 @@ import "./footer.css"
 function Footer() {
   return (
     <div class="d-flex flex-column">
-    <footer class="footer">
+    <footer class="footer bg-dark">
       <div>
-        <a href="https://coreui.io">Axolotl</a>
+        Axolotl
         <span>&copy; 2021</span>
       </div>
       <div class="ml-auto">
-        <span>Powered by</span>
-        <a href="https://coreui.io">Lindsey Baginski,Corrine Pusillo,Heena Rajpal,Britney Borrero,
+        <span>Powered by </span>
+        Lindsey Baginski, Corrine Pusillo, Heena Rajpal,<br/>
+       Britney Borrero,
         Timothy Balascak-Huber
-
-        </a>
       </div>
     </footer>
   </div>

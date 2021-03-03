@@ -2,19 +2,15 @@ import React from 'react'
 import { Container, Card, Button, InputGroup, FormControl, ProgressBar } from 'react-bootstrap'
 import { Link, useHistory } from "react-router-dom";
 import "./splash.css"
+import Footer from "../components/footer"
 export default function Splash() {
   return (
+    <>
     <Container className="splash">
       <h1>Axolotl</h1>
-      <h5>Never have a bad food & never feel alone! </h5>
-      <p class="lead">
-        
-         Our app would help in looking-up for the events and restaurants near you and also saving them for future 
-           access. 
-           
-   
-        
-      </p>
+      <h5>Let us help you find something to do!!</h5>
+      <p class ="lead">You and your friends will never have to figure out what to do again!
+Search for local Eateries and/or Events to fight the boredom!</p>
       <Link
         to="/signup"
       >
@@ -28,6 +24,7 @@ export default function Splash() {
           Login
 </Button>            </Link>
     </Container>
-
+    <Footer/>
+</>
   )
 }

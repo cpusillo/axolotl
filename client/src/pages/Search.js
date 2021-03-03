@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Container, Card, Button, InputGroup, FormControl, ProgressBar } from 'react-bootstrap'
-import { FaSearchLocation, FaCheckSquare } from 'react-icons/fa'
+import { Container, Card, Button, Row, Col, ProgressBar } from 'react-bootstrap'
+import { FaCheckSquare } from 'react-icons/fa'
 import API from "../utils/API"
 import SearchResults from "../components/SearchResults"
 import EventsResults from "../components/EventsResults"
@@ -154,20 +154,29 @@ render(){
 
     return (
         <>
-            <Container id="main-container" className="glassy-text" >
+            <Container className="glassy-text main-container" >
             <Card>
                 <Card.Header>
                     <h2 className="w-100 text-center mt-2">Search for local food & entertainment</h2>
                 </Card.Header>
                 <Card.Body>
-                <Button  style={{backgroundColor: this.state.bg1Color}}
+                <Container>
+                        <Row className="justify-content-md-center">
+                            <Col xs lg="2">
+                <Button  className="w-100 resEvent" style={{backgroundColor: this.state.bg1Color}}
            onClick={this.handleRestaurantsButtonClick}>
                     Restaurants
                 </Button>
-                <Button style={{backgroundColor: this.state.bgColor}}
+                </Col>
+                <Col md="auto"></Col>
+                <Col xs lg="2">
+                <Button className="w-100 resEvent" style={{backgroundColor: this.state.bgColor}}
            onClick={this.handleEventButtonClick}>
                     Events
                 </Button>
+                </Col>
+                </Row>
+                </Container>
              </Card.Body>
 
             </Card>
