@@ -1,12 +1,43 @@
-# axolotl
-This is a temporary repository for a group project.
+# Axolotl
 
-Please note! You need to have a valid firebase app running-- start here: https://firebase.google.com/ and come back when you're ready
+Axolotl is a project that is designed to generate restaurant and event ideas for you and your friends (post COVID) with the ability to save and add notes.
 
-You'll need to generate a new web app from your firebase account and create a .env.local in your client directory. Fill in the appropriate items in your .env.local file such as "REACT_APP_FIREBASE_API", etc.
+## Installation
+Deployed by heroku (insert link here)
 
-## How to install
-* Clone this repository to your local file system.
-* cd into the newly created directory
-* run `npm install` or `npm i` to pull in all package dependencies
-* run `npm start` which starts the express web server and serves up the react front end in the 'client' directory
+
+## Technologies
+
+Heroku
+Firebase
+Node.js
+React-Icons: https://react-icons.github.io/react-icons/
+React-Geolocated https://www.npmjs.com/package/react-geolocated
+Express
+MongoDB
+Mongoose
+
+APIS
+
+SeatGeek 
+Zomato
+
+
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## Contributors
+
+https://github.com/cpusillo
+https://github.com/tlbhuber
+https://github.com/Heenar04
+https://github.com/lbags54
+https://github.com/angelsdevil26
+
+
+
+
+## License
+[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)]
