@@ -18,7 +18,7 @@ async function handleSubmit(e){
             setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/") // "push" the user to our root page if login is successful
+            history.push("/search") // "push" the user to our root page if login is successful
         } catch {
             setError("Failed to login, check username and password")
         }

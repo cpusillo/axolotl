@@ -52,7 +52,7 @@ class SearchResultsCard extends Component {
                 show={this.state.showPopover}
               >
                 <Popover>
-                  <Popover.Title as="h3">Saved Restaurant!</Popover.Title>
+                  <Popover.Title as="h3">Restaurant Saved!</Popover.Title>
                 </Popover>
               </Overlay>
             </Col>
