@@ -26,5 +26,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/axolotl", {
 
 // Start the API server
 app.listen(process.env.PORT || 3001, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  console.log(`🌎  ==> API Server now listening!`);
 });
