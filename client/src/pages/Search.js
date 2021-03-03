@@ -168,12 +168,7 @@ render(){
            onClick={this.handleEventButtonClick}>
                     Events
                 </Button>
-                <InputGroup className="mb-3" onChange={this.handleInputChange}>
-                <FormControl className="wrapper"
-                placeholder="Tacos"
-                />
-                </InputGroup>
-                </Card.Body>
+             </Card.Body>
 
             </Card>
 

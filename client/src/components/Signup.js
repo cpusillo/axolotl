@@ -27,7 +27,7 @@ async function handleSubmit(e){
             setError("")
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value) //pass email and password to our signup function
-            history.push("/") // "push" our user to the root page if signup is successful.
+            history.push("/search") // "push" our user to the root page if signup is successful.
         } catch {
             setError("Failed to create an account, check password length & complexity.")
         }
