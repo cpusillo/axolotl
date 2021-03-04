@@ -3,7 +3,7 @@
 Axolotl is a project that is designed to generate restaurant and event ideas for you and your friends (post COVID) with the ability to save and add notes.
 
 ## Installation
-Deployed by heroku (insert link here)
+Deployed by heroku https://pure-lowlands-64867.herokuapp.com/
 
 
 ## Technologies
