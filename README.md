@@ -30,11 +30,11 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## Contributors
 
-https://github.com/cpusillo
-https://github.com/tlbhuber
-https://github.com/Heenar04
-https://github.com/lbags54
-https://github.com/angelsdevil26
+[cpusillo](https://github.com/cpusillo)
+[tlbhuber](https://github.com/tlbhuber)
+[heenar04](https://github.com/Heenar04)
+[lbags54](https://github.com/lbags54)
+[angelsdevil26](https://github.com/angelsdevil26)
 
 
 
